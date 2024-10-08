@@ -10,13 +10,11 @@ st.set_page_config(page_title="Bike Sharing Dashboard", layout="wide")
 st.title("Bike Sharing Dashboard")
 st.subheader("Made by : Viviana Purba")
 st.markdown("---")
-
 # Load data
 bikesharing_clean = pd.read_csv("dashboard/bikesharing_clean.csv")
 
 # First row: Rental Trends and Weekday Changes
 col1, col2 = st.columns(2)
-
 with col1:
     st.header("Tren Rental Sepeda")
     total_count_by_year = bikesharing_clean.groupby(['month', 'year'])['total_count'].sum().reset_index()
@@ -31,7 +29,7 @@ with col1:
     st.pyplot(fig)
 
 with col2:
-    st.header("Rental Sepeda Terbanyak dalam Seminggu")
+    st.header("Hari Rental Sepeda Terbanyak")
     category = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu']
     avg_weekday = bikesharing_clean.groupby('weekday')['total_count'].mean()
     fig, ax = plt.subplots(figsize=(10, 6))
