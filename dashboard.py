@@ -9,7 +9,6 @@ import scipy.stats as stats
 st.set_page_config(page_title="Bike Sharing Dashboard", layout="wide")
 st.title("Bike Sharing Dashboard")
 st.subheader("Made by : Viviana Purba")
-st.markdown("---")
 # Load data
 bikesharing_clean = pd.read_csv("dashboard/bikesharing_clean.csv")
 
@@ -37,7 +36,7 @@ with col2:
                 palette=['gray' if x != max(avg_weekday) else 'orange' for x in avg_weekday], ax=ax)
     ax.set_xlabel('Hari')
     ax.set_ylabel('Total Rata-Rata Sepeda yang dirental')
-    ax.set_title('Perubahan Total Sepeda yang Dirental dalam Seminggu')
+    ax.set_title('Total Sepeda yang Dirental dalam Seminggu')
     st.pyplot(fig)
 
 # Add a horizontal divider
